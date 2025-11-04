@@ -180,8 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: "Designed and developed my personal portfolio using HTML, CSS, JavaScript. It features responsive design, smooth animations, gradient effects, and an interactive particle background for a professional appearance.",
       tech: "HTML · CSS · JavaScript",
       img: "images/portfolio.png",
-      github: "https://github.com/MadukaSewwandi/My-Portfolio.git",
-      live: "https://madukasewwandi.netlify.app/", 
+      github: "https://github.com/MadukaSewwandi/Maduka-Portfolio.git",
+      live: "https://madukasewwandi.github.io/Maduka-Portfolio/", 
     },
   ];
 
