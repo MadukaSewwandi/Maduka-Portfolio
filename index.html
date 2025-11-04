@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maduka Sewwandi | QA Engineer Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+<!-- Professional Font Imports -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+<!-- Interactive Network Background -->
+<canvas id="network-bg"></canvas>
+
+  <!-- HEADER -->
+  <header class="header">
+    <canvas id="headerCanvas"></canvas>
+
+  <div class="container nav">
+<h1 class="logo"><span>Maduka Sewwandi</span></h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container fade-up">
+    <div class="hero-text">
+      <h1>Hello, I'm <span class="accent">Maduka Sewwandi</span></h1>
+      <h3 class="subtitle">Software QA Engineer</h3>
+      <p>
+        A passionate <strong>QA Engineer</strong> focused on building reliable, bug-free, and high-performing software 
+        through modern testing methodologies, automation, and quality-driven development.
+      </p>
+      <div class="cta">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="images/my_image.png" alt="Maduka Sewwandi" />
+    </div>
+  </section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="container fade-up about-section">
+  <div class="about-wrapper">
+    <!-- Text Content -->
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p class="intro-text">
+        Hi, I'm <strong>Maduka Sewwandi</strong> — an enthusiastic undergraduate in 
+        <strong>Information and Communication Technology</strong> at the University of Colombo.
+        I’m passionate about <strong>Software Quality Assurance</strong>, testing automation,
+        and building reliable web applications that make technology user-friendly and efficient.
+      </p>
+      <p>
+        I love exploring new technologies, analyzing system behaviors, and continuously
+        improving testing strategies to ensure high-quality product delivery.
+      </p>
+
+      <a href="#projects" class="btn btn-accent about-btn">View My Work</a>
+    </div>
+  </div>
+</section>
+
+  <!-- EDUCATION -->
+<section id="education" class="container fade-up section-card">
+  <h2>Education</h2>
+  <div class="timeline">
+
+    <!-- University of Colombo -->
+    <div class="timeline-item">
+      <div class="timeline-content centered">
+        <img src="images/uoc.png" alt="University of Colombo Logo" class="edu-logo">
+        <div class="edu-text">
+          <h3>University of Colombo</h3>
+          <p class="degree">BSc (Hons) in Information and Communication Technology</p>
+          <p class="status">Status: <span>Currently Undergraduate</span></p>
+          <p class="duration">Duration: 2023 – Present</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mahinda Rajapaksha College -->
+    <div class="timeline-item">
+      <div class="timeline-content centered">
+        <img src="images/mrcm_logo.png" alt="Mahinda Rajapaksha College Logo" class="edu-logo">
+        <div class="edu-text">
+          <h3>Mahinda Rajapaksha College, Matara</h3>
+          <p class="degree">G.C.E. Advanced Level – Engineering Technology Stream</p>
+          <div class="grade-summary">
+            <div class="grade-item"><span>Science for Technology</span><b>A</b></div>
+            <div class="grade-item"><span>Engineering Technology</span><b>B</b></div>
+            <div class="grade-item"><span>Information & Communication Technology</span><b>B</b></div>
+          </div>
+          <div class="highlight-card">
+            <strong>Z-Score:</strong> 2.2268
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+ <!-- INTERESTS -->
+<section id="interests" class="container fade-up">
+  <h2>Interests</h2>
+  <div class="interest-tags">
+    <span>Manual Testing</span>
+    <span>Automation Testing</span>
+    <span>API Testing</span>
+    <span>Agile QA Practices</span>
+    <span>Test Design</span>
+    <span>Bug Tracking</span>
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects" class="container fade-up">
+  <h2>Projects</h2>
+
+  <div class="project-carousel">
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div class="projects-wrapper" id="projectsTrack">
+      <!-- JS will insert project cards here -->
+    </div>
+
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+
+
+  <!-- MODAL -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <p id="modalTech" class="tech"></p>
+      <div class="modal-links">
+        <a id="modalGit" href="#" target="_blank" class="btn">GitHub</a>
+        <a id="modalLive" href="#" target="_blank" class="btn btn-outline">Live Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills container fade-up section-card">
+    <h2>Skills</h2>
+    <div class="skill-bar"><p>Manual Testing</p><div class="bar"><span data-skill="95"></span></div></div>
+    <div class="skill-bar"><p>Automation Testing </p><div class="bar"><span data-skill="75"></span></div></div>
+    <div class="skill-bar"><p>API Testing</p><div class="bar"><span data-skill="70"></span></div></div>
+    <div class="skill-bar"><p>Test Case Design</p><div class="bar"><span data-skill="95"></span></div></div>
+    <div class="skill-bar"><p>Bug Reporting</p><div class="bar"><span data-skill="95"></span></div></div>
+    <div class="skill-bar"><p>Test Execution</p><div class="bar"><span data-skill="90"></span></div></div>
+
+  </section>
+
+<!-- TOOLS & TECHNOLOGIES -->
+<section id="tools" class="container fade-up">
+  <h2>Tools & Technologies</h2>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <img src="images/selenium.png" alt="Selenium">
+      <p>Selenium</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/playwright.png" alt="Playwright">
+      <p>Playwright</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/postman.png" alt="Postman">
+      <p>Postman</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/git.png" alt="Git">
+      <p>Git</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/github.png" alt="GitHub">
+      <p>GitHub</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/jira.jpeg" alt="Jira">
+      <p>Jira</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/vscode.png" alt="VS Code">
+      <p>VS Code</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/pycharm.jpeg" alt="PyCharm">
+      <p>PyCharm</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/intellij.jpeg" alt="IntelliJ IDEA">
+      <p>IntelliJ</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/firebase.png" alt="Firebase">
+      <p>Firebase</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/mysql.png" alt="MySQL">
+      <p>MySQL</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/mongodb.png" alt="MongoDB">
+      <p>MongoDB</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/react.png" alt="React.js">
+      <p>React.js</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/Appium.jpeg" alt="Appium">
+      <p>Appium</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/Cypress.png" alt="Cypress">
+      <p>Cypress</p>
+    </div>
+    <div class="tool-card">
+      <img src="images/code blocks.png" alt="code blocks">
+      <p>Code Blocks</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT ME -->
+<section id="contact" class="container fade-up section-card">
+  <h2>Contact Me</h2>
+
+  <div class="contact-content">
+    <p>Interested in collaborating or hiring me? Let’s connect!</p>
+
+    <div class="contact-buttons">
+<a href="images/Maduka_Sewwandi.CV.pdf" download class="btn btn-outline">Download CV</a>
+    </div>
+
+    <form id="contactForm" class="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="4" placeholder="Your Message..." required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer" class="fade-up">
+  <!-- Canvas for animated code rain -->
+  <canvas id="footerCanvas"></canvas>
+
+  <p>© 2025 Maduka Sewwandi | QA Engineer</p>
+
+  <div class="social-links">
+    <a href="mailto:dmadukasewwandi@gmail.com" target="_blank" title="Email">
+      <img src="images/email.png" alt="Email">
+    </a>
+    <a href="https://github.com/MadukaSewwandi" target="_blank" title="GitHub">
+      <img src="images/github.png" alt="GitHub">
+    </a>
+    <a href="https://www.linkedin.com/in/maduka-sewwandi/" target="_blank" title="LinkedIn">
+      <img src="images/linkedin.png" alt="LinkedIn">
+    </a>
+  </div>
+</footer>
+
+
+  <!-- SCROLL TO TOP -->
+  <button id="scrollTop" class="scroll-btn">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
