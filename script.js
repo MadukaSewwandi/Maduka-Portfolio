@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
+/*
 // === FOOTER CODE RAIN EFFECT (Safe Version) ===
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("footerCanvas");
@@ -419,7 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(drawRain, 50);
 });
-
+*/
 
 // === HEADER CODE RAIN EFFECT ===
 document.addEventListener("DOMContentLoaded", () => {
