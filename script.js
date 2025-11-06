@@ -297,11 +297,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === Skills Animation ===
-  document.querySelectorAll(".bar span").forEach((span) => {
-    const val = span.getAttribute("data-skill");
-    setTimeout(() => (span.style.width = val + "%"), 400);
-  });
+// === Animated Skill Bars with Moving Percentage Tracker ===
+const skillBars = document.querySelectorAll(".bar");
+
+skillBars.forEach((bar) => {
+  const fill = bar.querySelector("span[data-skill]");
+  const percentText = bar.querySelector(".percent");
+  const skillVal = parseInt(fill.getAttribute("data-skill"));
+
+  let count = 0;
+  const speed = 20; // smaller = faster count animation
+
+  // Animate the bar fill
+  setTimeout(() => {
+    fill.style.width = skillVal + "%";
+    bar.parentElement.classList.add("active");
+  }, 300);
+
+  // Animate the counter and movement
+  const counter = setInterval(() => {
+    if (count < skillVal) {
+      count++;
+      percentText.textContent = count + "%";
+
+      // Move the text smoothly to the right
+      percentText.style.left = `calc(${count}% - 25px)`;
+    } else {
+      clearInterval(counter);
+    }
+  }, speed);
+});
+
 
   // === Scroll Reveal Animation for Tools Section ===
   if (typeof ScrollReveal !== "undefined") {
