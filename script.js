@@ -77,14 +77,70 @@ animate();
 
 
 // === Header Scroll Animation ===
+// === HEADER SCROLL ANIMATION ===
 const header = document.querySelector(".header");
-
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+
+// === PROFESSIONAL MATRIX CODE RAIN (Minimal Neon Style) ===
+document.addEventListener("DOMContentLoaded", () => {
+  const headerCanvas = document.getElementById("headerCanvas");
+  if (!headerCanvas) return;
+
+  const ctx = headerCanvas.getContext("2d");
+  let fontSize = 12; // smaller, professional font
+  const characters = "01 QA DEV WEB CODE TEST {}[]<>/*+=";
+  const matrix = characters.split("");
+
+  let columns, drops;
+
+  function resizeCanvas() {
+    const dpr = window.devicePixelRatio || 1;
+    headerCanvas.width = headerCanvas.offsetWidth * dpr;
+    headerCanvas.height = 180 * dpr;
+    ctx.scale(dpr, dpr);
+    columns = Math.floor(headerCanvas.width / (fontSize * dpr));
+    drops = Array(columns).fill(1);
   }
+
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  function drawMatrix() {
+    // Create faint black overlay for motion trail
+    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.fillRect(0, 0, headerCanvas.width, headerCanvas.height);
+
+    // Smooth neon gradient text color
+    const gradient = ctx.createLinearGradient(0, 0, headerCanvas.width, 0);
+    gradient.addColorStop(0, "#00ffcc");
+    gradient.addColorStop(0.5, "#00ffaa");
+    gradient.addColorStop(1, "#a6fff0");
+
+    ctx.fillStyle = gradient;
+    ctx.font = `${fontSize}px 'Roboto Mono', monospace`;
+    ctx.shadowColor = "rgba(0, 255, 200, 0.4)";
+    ctx.shadowBlur = 6;
+
+    // Draw each column's text
+    for (let i = 0; i < drops.length; i++) {
+      const text = matrix[Math.floor(Math.random() * matrix.length)];
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+
+      ctx.fillText(text, x, y);
+
+      // Reset occasionally for randomness
+      if (y > headerCanvas.height / (window.devicePixelRatio || 1) && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
 });
 
 
@@ -341,14 +397,6 @@ skillBars.forEach((bar) => {
   }
 });
 
-// === Scroll to Top Button ===
-const scrollBtn = document.getElementById("scrollTop");
-window.addEventListener("scroll", () => {
-  scrollBtn.style.display = window.scrollY > 400 ? "block" : "none";
-});
-scrollBtn.addEventListener("click", () =>
-  window.scrollTo({ top: 0, behavior: "smooth" })
-);
 
 // === Education Scroll Animations ===
 ScrollReveal().reveal(".timeline-item", {
@@ -392,6 +440,26 @@ contactForm.addEventListener("submit", (e) => {
       console.log("CV Download triggered ✅");
     });
   }
+});
+
+// === Scroll to Top Button Logic ===
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add("visible");
+    } else {
+      scrollBtn.classList.remove("visible");
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
 });
 
 // === Animate skill bars based on data-skill ===
@@ -447,40 +515,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 */
 
-// === HEADER CODE RAIN EFFECT ===
-document.addEventListener("DOMContentLoaded", () => {
-  const headerCanvas = document.getElementById("headerCanvas");
-  if (!headerCanvas) return;
-
-  const ctx = headerCanvas.getContext("2d");
-
-  function resizeHeaderCanvas() {
-    headerCanvas.width = window.innerWidth;
-    headerCanvas.height = 120; // fits header height
-  }
-  resizeHeaderCanvas();
-  window.addEventListener("resize", resizeHeaderCanvas);
-
-  const chars = "01 QA CODE TEST • ";
-  const drops = Array(Math.floor(headerCanvas.width / 10)).fill(1);
-
-  function drawHeaderRain() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, headerCanvas.width, headerCanvas.height);
-
-    ctx.fillStyle = "#00fff0"; // bright cyan to match theme
-    ctx.font = "13px monospace";
-
-    drops.forEach((y, i) => {
-      const text = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(text, i * 10, y * 10);
-
-      if (y * 10 > headerCanvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    });
-  }
-
-  setInterval(drawHeaderRain, 50);
-});

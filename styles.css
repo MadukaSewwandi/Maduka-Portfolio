@@ -1,15 +1,14 @@
-/* === ROOT COLOR THEME (Professional Orange + Navy) === */
+/* === ROOT COLOR THEME (Professional Green + Navy) === */
 :root {
   --bg1: #0f172a;
   --bg2: #1e293b;
   --card: #000000;
-  --accent: #00d47e;
+  --accent: #00ffaa;
   --text: #f4f4f4;
   --muted: #9fbfb0;
   --radius: 10px;
   --transition: all 0.3s ease;
 }
-
 
 /* === INTERACTIVE PARTICLE NETWORK BACKGROUND === */
 #network-bg {
@@ -28,8 +27,8 @@ body::before {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: radial-gradient(circle at 30% 30%, rgba(0,212,126,0.3), transparent 60%),
-              radial-gradient(circle at 70% 70%, rgba(102,240,176,0.25), transparent 60%);
+  background: radial-gradient(circle at 30% 30%, rgba(0,255,170,0.25), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(0,255,200,0.25), transparent 60%);
   animation: pulse 10s infinite alternate;
   z-index: -1;
 }
@@ -51,31 +50,28 @@ body::after {
   pointer-events: none;
 }
 
-
-/* ===== HEADER (Professional Animated Style – Soft Green Theme) ===== */
+/* ===== HEADER (Professional Animated – Matrix Style) ===== */
 
 /* === HEADER CODE RAIN BACKGROUND === */
 #headerCanvas {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.25; /* subtle transparency */
-  pointer-events: none; /* avoid blocking clicks */
+  pointer-events: none;
+  opacity: 0.35;
 }
 
-/* === HEADER BASE BACKGROUND === */
+/* === HEADER CONTAINER === */
 .header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 25px rgba(0, 255, 180, 0.25);
-  z-index: 1000;
+  position: relative;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 255, 170, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+  z-index: 10;
 }
 
 /* Decorative soft glow animation */
@@ -99,12 +95,12 @@ body::after {
 
 /* Header when scrolled */
 .header.scrolled {
-  background: rgba(0, 0, 0, 0.9);
-  box-shadow: 0 0 25px rgba(0, 255, 150, 0.3);
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 0 25px rgba(0, 255, 150, 0.35);
   transform: translateY(0);
 }
 
-/* === Navigation Container === */
+/* === NAVIGATION === */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -120,19 +116,18 @@ body::after {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* === Logo Styling (Animated Gradient Text) === */
+/* === LOGO (Gradient Text + Glow Animation) === */
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
   font-family: 'Rajdhani', sans-serif;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.4s ease;
   position: relative;
   display: inline-block;
+  transition: all 0.4s ease;
 }
 
-/* Gradient for logo text */
 .logo span {
   background: linear-gradient(90deg, #00ffcc, #a6fff0, #00ffaa, #00ffcc);
   background-size: 300%;
@@ -140,22 +135,21 @@ body::after {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: gradientShift 5s linear infinite;
+  animation: gradientShift 6s linear infinite;
 }
 
-/* Gradient shift animation */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
 
-/* Hover effect */
+/* Hover glow */
 .logo:hover {
   transform: scale(1.05);
-  text-shadow: 0 0 18px rgba(0, 255, 200, 0.6);
+  text-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
 }
 
-/* === Navigation Links === */
+/* === NAV LINKS === */
 .nav-links {
   list-style: none;
   display: flex;
@@ -170,7 +164,6 @@ body::after {
   position: relative;
 }
 
-/* Link styling */
 .nav-links a {
   color: #e0fdf7;
   font-weight: 600;
@@ -178,11 +171,11 @@ body::after {
   font-size: 1rem;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  position: relative;
   padding: 0.2rem 0;
+  position: relative;
 }
 
-/* Hover underline (soft green gradient) */
+/* Underline hover effect */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -200,7 +193,7 @@ body::after {
   width: 100%;
 }
 
-/* Hover glow + slight lift */
+/* Hover color + glow */
 .nav-links a:hover {
   color: #00ffaa;
   text-shadow: 0 0 10px rgba(0, 255, 200, 0.8);
@@ -213,7 +206,7 @@ body::after {
   font-weight: 700;
 }
 
-/* === Responsive Header === */
+/* === Responsive === */
 @media (max-width: 768px) {
   .nav-links {
     gap: 1.2rem;
@@ -221,11 +214,11 @@ body::after {
     justify-content: center;
   }
   .nav-links a {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
-/* === SECTION TITLES (Unified Style for Header Context) === */
+/* === TITLE ANIMATION STYLE (Header/Sections) === */
 h1 {
   color: #00ffcc;
   text-transform: uppercase;
@@ -234,7 +227,6 @@ h1 {
   letter-spacing: 1px;
   margin-bottom: 2rem;
   text-shadow: 0 0 15px rgba(0, 255, 200, 0.4);
-  position: relative;
   animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
@@ -243,7 +235,6 @@ h1 {
   100% { text-shadow: 0 0 25px #a6fff0, 0 0 40px #00ffaa; transform: scale(1.03); }
 }
 
-/* Gradient underline */
 h1::after {
   content: "";
   display: block;
@@ -260,6 +251,7 @@ h1::after {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
+
 /* === HERO SECTION (Refined Professional + Interactive – Soft Green Theme) === */
 .hero {
   display: flex;
@@ -330,35 +322,26 @@ h1::after {
   animation: fadeSlideUp 1.2s ease forwards;
 }
 
-/* === Typing Animation for Subtitle (Infinite Loop) === */
+/* === Typing Animation for Subtitle (Continuous Between Roles) === */
 .subtitle {
   display: inline-block;
   font-size: 1.8rem;
   font-weight: 600;
   color: #00ffaa;
   margin-bottom: 1.8rem;
-  border-right: 3px solid #00ffaa; /* typing cursor */
+  border-right: 3px solid #00ffaa; /* blinking cursor */
   white-space: nowrap;
   overflow: hidden;
-  width: 0;
-  animation:
-    typing 4s steps(25, end) 0.8s infinite alternate,
-    blinkCursor 0.8s step-end infinite;
+  min-height: 2.2rem;
+  animation: blinkCursor 0.8s step-end infinite;
 }
 
-/* Typing effect */
-@keyframes typing {
-  0% { width: 0; }
-  50% { width: 15ch; } /* adjust ch count to text length */
-  100% { width: 0; }
-}
-
-/* Blinking cursor */
+/* Cursor blinking effect */
 @keyframes blinkCursor {
-  0% { border-color: transparent; }
+  0%, 100% { border-color: transparent; }
   50% { border-color: #00ffaa; }
-  100% { border-color: transparent; }
 }
+
 
 /* === Paragraph === */
 .hero-text p {
@@ -1755,28 +1738,46 @@ h1::after {
   }
 }
 
-/* === Scroll To Top Button === */
+/* === Scroll To Top Button (Soft Green Theme) === */
 .scroll-btn {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #00ffaa;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #00ffaa, #00ffcc);
   color: #000;
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 1.4rem;
+  width: 50px;
+  height: 50px;
+  font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 255, 170, 0.4);
-  display: none;
-  transition: 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 255, 170, 0.4);
+  z-index: 2000;
 }
 
+.scroll-btn.visible {
+  opacity: 1;
+  pointer-events: all;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+/* Hover effects */
 .scroll-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 255, 170, 0.6);
+  box-shadow: 0 6px 25px rgba(0, 255, 170, 0.7);
+}
+
+/* Floating animation */
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 /* === Dark/Light Mode (Toggle Ready) === */
