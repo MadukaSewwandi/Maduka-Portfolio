@@ -9,6 +9,16 @@
   --radius: 10px;
   --transition: all 0.3s ease;
 }
+/* === GLOBAL TYPOGRAPHY === */
+body, h1, h2, h3, h4, h5, h6, p, a, span, li, button {
+  font-family: 'JetBrains Mono', monospace !important;
+  letter-spacing: 0.5px;
+}
+h1, h2, h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 
 /* === INTERACTIVE PARTICLE NETWORK BACKGROUND === */
 #network-bg {
@@ -912,7 +922,7 @@ h1::after {
 
 .cert-text {
   color: var(--text);
-  font-size: 1.15rem;   /* ⬆️ increased from 1rem to 1.15rem */
+  font-size: 1rem;   /* ⬆️ increased from 1rem to 1.15rem */
   line-height: 1.9;     /* gives better readability */
   max-width: 750px;
   margin: 0 auto 2rem;
