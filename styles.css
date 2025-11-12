@@ -305,7 +305,7 @@ h1::after {
 
 /* === Gradient Name (No Blur or Shimmer) === */
 .accent {
-  background: linear-gradient(90deg, #00ffaa, #aaffcc, #00ffee, #00ffaa);
+  background: linear-gradient(90deg, #00ffaa, #d7ebdf, #00ffee, #00ffaa);
   background-size: 300%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -322,7 +322,7 @@ h1::after {
 
 /* === HERO TEXT === */
 .hero-text h1 {
-  font-size: 2.9rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 0.7rem;
   color: #ffffff;
@@ -332,30 +332,29 @@ h1::after {
   animation: fadeSlideUp 1.2s ease forwards;
 }
 
-/* === Typing Animation for Subtitle (Continuous Between Roles) === */
+/* === Typing Animation Subtitle (Continuous Between Roles) === */
 .subtitle {
   display: inline-block;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #00ffaa;
-  margin-bottom: 1.8rem;
-  border-right: 3px solid #00ffaa; /* blinking cursor */
+  color: #00e6b0;
+  margin-bottom: 2rem;
+  border-right: 3px solid #00ffaa;
   white-space: nowrap;
   overflow: hidden;
   min-height: 2.2rem;
   animation: blinkCursor 0.8s step-end infinite;
 }
 
-/* Cursor blinking effect */
+/* Cursor blinking */
 @keyframes blinkCursor {
   0%, 100% { border-color: transparent; }
   50% { border-color: #00ffaa; }
 }
 
-
 /* === Paragraph === */
 .hero-text p {
-  font-size: 1.08rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: #e0fdf7;
   margin-bottom: 2rem;
@@ -368,45 +367,12 @@ h1::after {
   animation-delay: 0.6s;
 }
 
-/* === Fade + Slide Animation === */
 @keyframes fadeSlideUp {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* === Hero Image (same as before) === */
-.hero-img img {
-  width: 260px;
-  border-radius: 50%;
-  box-shadow: 0 0 25px rgba(0,255,240,0.3);
-  animation: float 4s ease-in-out infinite;
-  transition: transform 0.4s ease;
-}
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-/* Hover effect */
-.hero:hover .hero-img img {
-  transform: scale(1.05) rotate(1deg);
-}
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 1.2rem;
-  }
-  .hero-text p {
-    font-size: 0.95rem;
-  }
-}
-
-
-/* === Floating Image (Glow Orbit – Green Version) === */
+/* === Floating Profile Image === */
 .hero-img img {
   width: 260px;
   border-radius: 50%;
@@ -457,22 +423,12 @@ h1::after {
   color: #000;
 }
 
-/* === HERO IMAGE ENHANCEMENTS === */
+/* === Hero Image Glow Effects === */
 .hero-img {
   position: relative;
   display: inline-block;
 }
 
-.hero-img img {
-  width: 270px;
-  border-radius: 50%;
-  animation: float 4s ease-in-out infinite;
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 2;
-}
-
-/* Outer Glow Ring (Green Aura) */
 .hero-img::before {
   content: "";
   position: absolute;
@@ -494,7 +450,6 @@ h1::after {
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Subtle Inner Halo */
 .hero-img::after {
   content: "";
   position: absolute;
@@ -518,16 +473,17 @@ h1::after {
 
 /* === Responsive === */
 @media (max-width: 768px) {
-  .hero-text h2 {
+  .hero-text h1 {
     font-size: 2rem;
   }
-  .hero-text h3 {
-    font-size: 1.2rem;
+  .subtitle {
+    font-size: 1.3rem;
   }
   .hero-text p {
     font-size: 0.95rem;
   }
 }
+
 
 /* ===== ABOUT SECTION (Soft Green + Glass Black Theme) ===== */
 .about-section {
@@ -1696,7 +1652,14 @@ h1::after {
   box-shadow: 0 0 12px rgba(0, 255, 200, 0.5);
 }
 
-/* === Disabled Send Button (Visual only) === */
+/* === Status message === */
+#formStatus {
+  font-weight: 600;
+  margin-top: 0.8rem;
+  transition: opacity 0.3s;
+}
+
+/* === Send Button === */
 .contact-form button {
   background: rgba(0, 255, 200, 0.2);
   color: #e8fff5;

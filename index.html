@@ -19,7 +19,7 @@
   <canvas id="headerCanvas"></canvas>
 
   <div class="container nav">
-    <h1 class="logo"><span>Maduka Sewwandi</span></h1>
+    <h1 class="logo"><span>MS</span></h1>
     <nav>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -37,11 +37,10 @@
   <!-- HERO -->
   <section class="hero container fade-up">
     <div class="hero-text">
-      <h1>Hello, I'm <span class="accent">Maduka Sewwandi</span></h1>
+      <h1><span class="accent">Maduka Sewwandi</span></h1>
       <h3 class="subtitle"></h3>
       <p>
-        A passionate <strong>QA Engineer & Front-End Developer</strong> focused on building reliable, bug-free, and high-performing web applications 
-        through modern testing methodologies, responsive design, and quality-driven development.
+       Aspiring<strong> QA Engineer & Front-End Developer</strong> focused on building user-friendly, bug-free, and reliable web applications with modern testing and clean design.
       </p>
       <div class="cta">
         <a href="#projects" class="btn">View Projects</a>
@@ -116,15 +115,13 @@
 <section id="certifications" class="container fade-up section-card">
   <h2>Certifications</h2>
   <p class="cert-text">
-    I’ve earned several certifications that strengthen my expertise in software testing, QA methodologies, and web technologies.  
-    You can explore all my certifications directly on my LinkedIn profile.
+   I’ve completed certifications in software testing, QA, and web technologies. You can view them on my LinkedIn profile.
   </p>
 
   <a href="https://www.linkedin.com/in/maduka-sewwandi/details/certifications/"
      target="_blank"
      class="btn btn-accent cert-btn">
-    View All Certifications on LinkedIn
-  </a>
+View on LinkedIn  </a>
 </section>
 
 
@@ -202,9 +199,17 @@
       <img src="images/playwright.png" alt="Playwright">
       <p>Playwright</p>
     </div>
+        <div class="tool-card">
+      <img src="images/Cypress.png" alt="Cypress">
+      <p>Cypress</p>
+    </div>
     <div class="tool-card">
       <img src="images/postman.png" alt="Postman">
       <p>Postman</p>
+    </div>
+        <div class="tool-card">
+      <img src="images/jira.jpeg" alt="Jira">
+      <p>Jira</p>
     </div>
     <div class="tool-card">
       <img src="images/git.png" alt="Git">
@@ -213,10 +218,6 @@
     <div class="tool-card">
       <img src="images/github.png" alt="GitHub">
       <p>GitHub</p>
-    </div>
-    <div class="tool-card">
-      <img src="images/jira.jpeg" alt="Jira">
-      <p>Jira</p>
     </div>
     <div class="tool-card">
       <img src="images/vscode.png" alt="VS Code">
@@ -229,6 +230,10 @@
     <div class="tool-card">
       <img src="images/intellij.jpeg" alt="IntelliJ IDEA">
       <p>IntelliJ</p>
+    </div>
+        <div class="tool-card">
+      <img src="images/code blocks.png" alt="code blocks">
+      <p>Code::Blocks</p>
     </div>
     <div class="tool-card">
       <img src="images/firebase.png" alt="Firebase">
@@ -250,14 +255,6 @@
       <img src="images/Figma.png" alt="Appium">
       <p>Figma</p>
     </div>
-    <div class="tool-card">
-      <img src="images/Cypress.png" alt="Cypress">
-      <p>Cypress</p>
-    </div>
-    <div class="tool-card">
-      <img src="images/code blocks.png" alt="code blocks">
-      <p>Code::Blocks</p>
-    </div>
   </div>
 </section>
 
@@ -269,17 +266,25 @@
     <p>Interested in collaborating or hiring me? Let’s connect!</p>
 
     <div class="contact-buttons">
-<a href="images/Maduka_Sewwandi.CV.pdf" download class="btn btn-outline">Download CV</a>
+      <a href="images/Maduka_Sewwandi.CV.pdf" download class="btn btn-outline">Download CV</a>
     </div>
 
-    <form id="contactForm" class="contact-form">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" rows="4" placeholder="Your Message..." required></textarea>
+    <form
+      id="contactForm"
+      class="contact-form"
+      action="https://formspree.io/f/mgvrejgw"
+      method="POST"
+      novalidate
+    >
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Your Email" required>
+      <textarea name="message" id="message" rows="4" placeholder="Your Message..." required></textarea>
       <button type="submit" class="btn">Send Message</button>
+      <p id="formStatus" aria-live="polite" style="margin-top:12px;"></p>
     </form>
   </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer id="footer" class="fade-up">

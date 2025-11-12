@@ -413,28 +413,49 @@ document.querySelectorAll(".timeline-content").forEach((card) => {
 });
 
 
-// === CONTACT SECTION FUNCTIONALITY ===
+// === CONTACT SECTION FUNCTIONALITY (Formspree Integration) ===
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
 
-  // Simulate message sent effect (visual only)
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const btn = contactForm.querySelector("button");
-  btn.textContent = "Message Sent ✅";
-  btn.style.background = "var(--accent)";
-  btn.style.color = "#fff";
-  btn.style.cursor = "default";
-  setTimeout(() => {
-    btn.textContent = "Send Message";
-    btn.style.background = "rgba(249, 115, 22, 0.2)";
-    btn.style.color = "var(--text)";
-    btn.style.cursor = "pointer";
-  }, 2500);
-});
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = contactForm.querySelector("button");
+      const formData = new FormData(contactForm);
+
+      btn.textContent = "Sending...";
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(contactForm.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: formData,
+        });
+
+        if (res.ok) {
+          formStatus.style.color = "#00ffcc";
+          formStatus.textContent = "✅ Message sent successfully!";
+          contactForm.reset();
+        } else {
+          formStatus.style.color = "#ff6b6b";
+          formStatus.textContent = "⚠️ Something went wrong. Please try again.";
+        }
+      } catch (error) {
+        formStatus.style.color = "#ff6b6b";
+        formStatus.textContent = "❌ Network error. Please try again.";
+      } finally {
+        btn.textContent = "Send Message";
+        btn.disabled = false;
+      }
+
+      setTimeout(() => (formStatus.textContent = ""), 5000);
+    });
+  }
 
   // Ensure CV download works
-  const cvButton = document.querySelector('.contact-buttons a');
+  const cvButton = document.querySelector(".contact-buttons a");
   if (cvButton) {
     cvButton.addEventListener("click", () => {
       console.log("CV Download triggered ✅");
