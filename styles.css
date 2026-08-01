@@ -636,6 +636,44 @@ h1::after {
   }
 }
 
+/* === EXPERIENCE SECTION === */
+#experience h2 {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 2rem;
+}
+
+#experience {
+  text-align: center;
+}
+.company {
+  font-weight: 600;
+  color: #00ffaa;
+  margin-bottom: 0.3rem;
+}
+
+.experience-list {
+  text-align: left;
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.experience-list li {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+  color: #e0fdf7;
+}
+
+.project-highlight {
+  margin-top: 1rem;
+  background: rgba(0, 255, 170, 0.08);
+  padding: 12px;
+  border-left: 3px solid #00ffaa;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #d9fff5;
+}
 /* ===== EDUCATION SECTION (Modern Glass Black + Soft Green Theme) ===== */
 #education {
   background: none;
